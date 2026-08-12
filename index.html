@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mahendra Ghasal Books - Buy books online">
+  <title>Mahendra Ghasal Books</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <span>📚</span>
+      <div>
+        <h1>Mahendra Ghasal Books</h1>
+        <p>Your Online Book Store</p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#books">Books</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button class="cart-btn" onclick="openCart()">
+        🛒 Cart <span id="cart-count">0</span>
+      </button>
+    </nav>
+  </header>
+
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <p class="small-title">WELCOME TO</p>
+      <h2>Mahendra Ghasal<br><span>Book Store</span></h2>
+
+      <p>
+        Discover books that inspire, educate and entertain.
+        Find your next favourite book today.
+      </p>
+
+      <a href="#books" class="hero-btn">Explore Books</a>
+    </div>
+
+    <div class="hero-book">
+      📖
+    </div>
+  </section>
+
+
+  <!-- Search -->
+  <section class="search-section">
+    <input
+      type="text"
+      id="search"
+      placeholder="🔍 Search books by title or author..."
+      onkeyup="searchBooks()"
+    >
+  </section>
+
+
+  <!-- Categories -->
+  <section class="categories">
+    <button onclick="filterBooks('all')">All Books</button>
+    <button onclick="filterBooks('history')">History</button>
+    <button onclick="filterBooks('politics')">Political Science</button>
+    <button onclick="filterBooks('fiction')">Fiction</button>
+    <button onclick="filterBooks('education')">Education</button>
+  </section>
+
+
+  <!-- Books -->
+  <main id="books" class="books-section">
+
+    <div class="section-heading">
+      <p>OUR COLLECTION</p>
+      <h2>Popular Books</h2>
+    </div>
+
+    <div id="book-container" class="book-grid">
+
+      <!-- Book 1 -->
+      <article class="book-card" data-category="history">
+        <div class="book-cover cover-1">📜</div>
+
+        <div class="book-info">
+          <span class="category">History</span>
+          <h3>Indian History</h3>
+          <p>Complete Guide to Indian History</p>
+
+          <div class="price">₹299</div>
+
+          <button onclick="addToCart('Indian History', 299)">
+            Add to Cart
+          </button>
+        </div>
+      </article>
+
+
+      <!-- Book 2 -->
+      <article class="book-card" data-category="politics">
+        <div class="book-cover cover-2">⚖️</div>
+
+        <div class="book-info">
+          <span class="category">Political Science</span>
+          <h3>Political Science</h3>
+          <p>Introduction to Political Theory</p>
+
+          <div class="price">₹349</div>
+
+          <button onclick="addToCart('Political Science', 349)">
+            Add to Cart
+          </button>
+        </div>
+      </article>
+
+
+      <!-- Book 3 -->
+      <article class="book-card" data-category="fiction">
+        <div class="book-cover cover-3">🚀</div>
+
+        <div class="book-info">
+          <span class="category">Fiction</span>
+          <h3>Journey Beyond</h3>
+          <p>An inspiring fictional story</p>
+
+          <div class="price">₹249</div>
+
+          <button onclick="addToCart('Journey Beyond', 249)">
+            Add to Cart
+          </button>
+        </div>
+      </article>
+
+
+      <!-- Book 4 -->
+      <article class="book-card" data-category="education">
+        <div class="book-cover cover-4">🎓</div>
+
+        <div class="book-info">
+          <span class="category">Education</span>
+          <h3>Study Smart</h3>
+          <p>Smart Study Techniques for Students</p>
+
+          <div class="price">₹199</div>
+
+          <button onclick="addToCart('Study Smart', 199)">
+            Add to Cart
+          </button>
+        </div>
+      </article>
+
+
+      <!-- Book 5 -->
+      <article class="book-card" data-category="history">
+        <div class="book-cover cover-5">🏛️</div>
+
+        <div class="book-info">
+          <span class="category">History</span>
+          <h3>Ancient India</h3>
+          <p>Maurya, Gupta and Ancient Civilizations</p>
+
+          <div class="price">₹399</div>
+
+          <button onclick="addToCart('Ancient India', 399)">
+            Add to Cart
+          </button>
+        </div>
+      </article>
+
+
+      <!-- Book 6 -->
+      <article class="book-card" data-category="politics">
+        <div class="book-cover cover-6">🏛️</div>
+
+        <div class="book-info">
+          <span class="category">Political Science</span>
+          <h3>Indian Constitution</h3>
+          <p>Learn the Indian Constitution</p>
+
+          <div class="price">₹449</div>
+
+          <button onclick="addToCart('Indian Constitution', 449)">
+            Add to Cart
+          </button>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+
+  <!-- About -->
+  <section id="about" class="about">
+    <div>
+      <p class="small-title">ABOUT US</p>
+      <h2>Books for Every Reader</h2>
+
+      <p>
+        Mahendra Ghasal Books is an online bookstore created to make
+        quality books easily accessible to students, readers and
+        book lovers.
+      </p>
+
+      <p>
+        Our goal is to provide useful, educational and entertaining
+        books at affordable prices.
+      </p>
+    </div>
+
+    <div class="about-card">
+      <div>📚</div>
+      <h3>Quality Books</h3>
+      <p>Carefully selected books for readers.</p>
+    </div>
+
+    <div class="about-card">
+      <div>🚚</div>
+      <h3>Easy Ordering</h3>
+      <p>Simple and convenient book shopping.</p>
+    </div>
+
+    <div class="about-card">
+      <div>💰</div>
+      <h3>Affordable Prices</h3>
+      <p>Great books at reasonable prices.</p>
+    </div>
+  </section>
+
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="section-heading">
+      <p>GET IN TOUCH</p>
+      <h2>Contact Us</h2>
+    </div>
+
+    <div class="contact-container">
+
+      <div class="contact-info">
+        <h3>Mahendra Ghasal Books</h3>
+        <p>📧 Email: your-email@example.com</p>
+        <p>📱 Phone: +91 XXXXX XXXXX</p>
+        <p>📍 India</p>
+      </div>
+
+      <form onsubmit="sendMessage(event)">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+    </div>
+  </section>
+
+
+  <!-- Cart Modal -->
+  <div id="cart-modal" class="modal">
+
+    <div class="cart-box">
+
+      <button class="close" onclick="closeCart()">×</button>
+
+      <h2>🛒 Your Cart</h2>
+
+      <div id="cart-items"></div>
+
+      <div class="cart-total">
+        Total: ₹<span id="cart-total">0</span>
+      </div>
+
+      <button class="checkout-btn" onclick="checkout()">
+        Proceed to Checkout
+      </button>
+
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <h2>📚 Mahendra Ghasal Books</h2>
+      <p>Read. Learn. Grow.</p>
+    </div>
+
+    <p>
+      © 2026 Mahendra Ghasal Books. All Rights Reserved.
+    </p>
+
+    <p>
+      Website Owner: <strong>Mahendra Ghasal</strong>
+    </p>
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+          </html>
